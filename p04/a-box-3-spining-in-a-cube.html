@@ -1,15 +1,31 @@
+<!DOCTYPE html>
 <html>
   <head>
-   <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script> 
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
 
     <a-scene>
-      <a-sphere wireframe="true" position="0 2 -5" color="#110000" transparent="true"
-							  blending="additive" radius="0.5"></a-sphere>
-      <a-box  position="0 2 -5" rotation="45 45 45" color="#00FFFF" depth="0.57735" height="0.57735" width="0.57735"
-			  animation="property: rotation; dur: 10000; from: 0 0 0; to: 0 360 360; dir: normal; easing: linear; loop: true;"
-	  ></a-box>
+
+      <a-sphere
+        wireframe="true"
+        position="0 1 -3"
+        radius="1"
+        color="#FFFFFF">
+      </a-sphere>
+
+      <a-box
+        position="0 1 -3"
+        color="#00FFFF"
+        depth="0.6"
+        height="0.6"
+        width="0.6"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+      </a-box>
+
+      <a-sky color="#000000"></a-sky>
+
     </a-scene>
+
   </body>
 </html>
