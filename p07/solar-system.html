@@ -1,82 +1,75 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <title>Solar System</title>
     <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
-  <body>
 
+  <body>
     <a-scene>
 
-      <!-- Assets (replace with your own textures if required) -->
+      <!-- ASSETS (WORKING TEXTURES FROM CDN) -->
       <a-assets>
-        <img id="sunTex" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        <img id="planet1Tex" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-        <img id="planet2Tex" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        <img id="planet3Tex" src="https://cdn.aframe.io/a-painter/images/sky.jpg">
-        <img id="planet4Tex" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        <img id="sunTex" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sun.jpg">
+        <img id="earthTex" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/earth.jpg">
+        <img id="marsTex" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/mars.jpg">
+        <img id="jupiterTex" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/jupiter.jpg">
+        <img id="moonTex" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/moon.jpg">
       </a-assets>
 
+      <!-- LIGHTING -->
+      <a-light type="ambient" intensity="0.7"></a-light>
+      <a-light type="point" intensity="2" position="0 1.5 -5"></a-light>
+
+      <!-- CAMERA -->
+      <a-entity camera wasd-controls look-controls position="0 1.6 6"></a-entity>
+
       <!-- SUN -->
-      <a-sphere
-        id="sun"
-        position="0 1.6 -6"
-        radius="1.5"
-        src="#sunTex"
-        animation__color="property: material.color; dir: alternate; dur: 2000; loop: true; to: orange">
+      <a-sphere position="0 1.5 -5" radius="1.5"
+        material="src: #sunTex; emissive: orange; emissiveIntensity: 0.7"
+        animation="property: material.emissive;
+                   to: red;
+                   dir: alternate;
+                   dur: 1200;
+                   loop: true">
       </a-sphere>
 
-      <!-- PLANET 1 -->
-      <a-entity position="0 1.6 -6"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
-
-        <a-sphere radius="0.3" position="2 0 0" src="#planet1Tex"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 2000">
-        </a-sphere>
-
-      </a-entity>
-
-      <!-- PLANET 2 -->
-      <a-entity position="0 1.6 -6"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 9000">
-
-        <a-sphere radius="0.4" position="3 0 0" src="#planet2Tex"
+      <!-- EARTH -->
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 6000">
+        <a-sphere position="3 1.5 -5" radius="0.5"
+          material="src: #earthTex"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
         </a-sphere>
-
       </a-entity>
 
-      <!-- PLANET 3 -->
-      <a-entity position="0 1.6 -6"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 12000">
+      <!-- MARS -->
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 9000">
+        <a-sphere position="5 1.5 -5" radius="0.4"
+          material="src: #marsTex"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 2500">
+        </a-sphere>
+      </a-entity>
 
-        <a-sphere radius="0.5" position="4 0 0" src="#planet3Tex"
+      <!-- JUPITER -->
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 12000">
+        <a-sphere position="7 1.5 -5" radius="0.8"
+          material="src: #jupiterTex"
           animation="property: rotation; to: 0 360 0; loop: true; dur: 4000">
         </a-sphere>
-
       </a-entity>
 
-      <!-- PLANET 4 -->
-      <a-entity position="0 1.6 -6"
-        animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
-
-        <a-sphere radius="0.6" position="5 0 0" src="#planet4Tex"
-          animation="property: rotation; to: 0 360 0; loop: true; dur: 5000">
+      <!-- MOON -->
+      <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 15000">
+        <a-sphere position="9 1.5 -5" radius="0.3"
+          material="src: #moonTex"
+          animation="property: rotation; to: 0 360 0; loop: true; dur: 2000">
         </a-sphere>
-
       </a-entity>
-
-      <!-- LIGHT -->
-      <a-light type="point" position="0 1.6 -6" intensity="2"></a-light>
-
-      <!-- CAMERA + CONTROLS -->
-      <a-entity camera wasd-controls look-controls position="0 1.6 2"></a-entity>
 
       <!-- SKY -->
-      <a-sky color="#000000"></a-sky>
+      <a-sky color="black"></a-sky>
 
     </a-scene>
-
   </body>
 </html>
