@@ -1,20 +1,23 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script> 
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
-	<!-- <script src="../js/aframe.min.js"></script> -->
+
     <a-scene>
-	  <a-entity geometry="primitive: box" material="color: blue" position="0 1.5 -5" rotate="45 45 45"
-                
-             animation__spinX="property: rotation; to: 360 0 0; dur: 5000; easing: linear; loop: true"
-             animation__spinY="property: rotation; to: 360 360 0; dur: 5000; easing: linear; loop: true"
-			       animation__spinZ="property: rotation; to: 360 360 360; dur: 5000; easing: linear; loop: true"
-			 
-      
-                ></a-entity>
-      
-	  </a-entity>
+
+      <a-box
+        position="0 1 -3"
+        color="#4CC3D9"
+        animation__x="property: rotation; to: 360 0 0; loop: true; dur: 4000"
+        animation__y="property: rotation; to: 0 360 0; loop: true; dur: 4000"
+        animation__z="property: rotation; to: 0 0 360; loop: true; dur: 4000">
+      </a-box>
+
+      <a-sky color="#000000"></a-sky>
+
     </a-scene>
+
   </body>
 </html>
