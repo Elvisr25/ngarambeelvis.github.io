@@ -1,12 +1,15 @@
+<!DOCTYPE html>
 <html>
   <head>
-    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script> 
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
   </head>
   <body>
-	
     <a-scene>
-      <a-box  id="PGB box" position="0 2 -1.5" rotation="45 45 45" color="green"></a-box>
-	  <a-camera position="0 -1.6 4.5" wasd-controls></a-camera>
+
+      <a-box position="0 2 -3" rotation="45 45 45" color="green"></a-box>
+
+      <!-- Correct Camera -->
+      <a-entity camera position="0 1.6 0" wasd-controls look-controls></a-entity>
 
     </a-scene>
   </body>
